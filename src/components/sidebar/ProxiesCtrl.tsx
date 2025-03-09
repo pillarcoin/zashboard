@@ -1,4 +1,6 @@
 import { updateProxyProviderAPI } from '@/api'
+import ConnectionStatus from '@/components/overview/ConnectionStatus.vue'
+import IPCheck from '@/components/overview/IPCheck.vue'
 import { collapsedBus } from '@/composables/bus'
 import { proxiesFilter, useProxies } from '@/composables/proxies'
 import { PROXY_SORT_TYPE, PROXY_TAB_TYPE } from '@/constant'
@@ -335,7 +337,9 @@ export default defineComponent({
               {latencyTestAll}
             </div>
           }
-          {<div class="flex gap-2">{searchInput}</div>}
+          {/* {<div class="flex gap-2">{searchInput}</div>} */}
+          <IPCheck />
+          <ConnectionStatus />
         </div>
       )
     }
